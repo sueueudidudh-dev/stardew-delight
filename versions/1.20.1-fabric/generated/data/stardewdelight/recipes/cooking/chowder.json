@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    },
+    {
+      "tag": "c:crops/potato"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:chowder"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

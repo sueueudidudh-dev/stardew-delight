@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/bread",
+    "#c:crops/carrot",
+    "minecraft:glow_berries",
+    "farmersdelight:cabbage_leaf"
+  ],
+  "result": {
+    "id": "stardewdelight:survival_burger"
+  }
+}

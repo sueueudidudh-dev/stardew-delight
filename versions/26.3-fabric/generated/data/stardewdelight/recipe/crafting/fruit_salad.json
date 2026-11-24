@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "minecraft:sweet_berries",
+    "minecraft:melon_slice",
+    "minecraft:apple",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:fruit_salad"
+  }
+}

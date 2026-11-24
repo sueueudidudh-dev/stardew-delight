@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    },
+    {
+      "tag": "c:foods/doughs"
+    },
+    {
+      "item": "minecraft:sunflower"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:crispy_bass"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

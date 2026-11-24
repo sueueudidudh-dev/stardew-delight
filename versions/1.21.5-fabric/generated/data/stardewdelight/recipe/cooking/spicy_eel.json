@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:cod",
+    "minecraft:blaze_powder"
+  ],
+  "result": {
+    "id": "stardewdelight:spicy_eel"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:salmon",
+    "#c:crops/cabbage",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:salmon_dinner"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

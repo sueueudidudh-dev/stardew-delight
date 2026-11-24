@@ -1,8 +1,8 @@
 <p align="center"><img src="docs/banner.gif" alt="Stardew Delight" width="100%"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A" alt="Minecraft 1.20.1">
-  <img src="https://img.shields.io/badge/Forge-47%2B-E04E14" alt="Forge 47+">
+  <img src="https://img.shields.io/badge/Minecraft-1.18.2--26.3-62B47A" alt="Minecraft 1.18.2-26.3">
+  <img src="https://img.shields.io/badge/loaders-Forge%20%7C%20NeoForge%20%7C%20Fabric-E04E14" alt="Forge | NeoForge | Fabric">
   <img src="https://img.shields.io/badge/requires-Farmer's%20Delight-C8853B" alt="Requires Farmer's Delight">
   <img src="https://img.shields.io/badge/dishes-78-F5A623" alt="78 dishes">
 </p>
@@ -17,9 +17,30 @@ the cooking pot, at the crafting table and on the cutting board. The mod page te
 
 Вся еда из Stardew Valley, переделанная из мода **Stardew Kitchen** в аддон для **Farmer's Delight**.
 
-* **Minecraft 1.20.1, Forge 47+** (Farmer's Delight для Forge есть только на 1.20.1)
-* Требуется **Farmer's Delight 1.20.1-1.2.4+** (проверено на 1.20.1-1.3.4)
+* **Minecraft 1.18.2 – 26.3** на **Forge, NeoForge и Fabric** — по файлу на каждую версию, см. таблицу ниже
+* Требуется **Farmer's Delight**; на Fabric — **Farmer's Delight Refabricated** и **Fabric API**
 * Нужен и на клиенте, и на сервере
+
+## Версии
+| Minecraft | Загрузчик | Файл | Проверено с Farmer's Delight |
+|---|---|---|---|
+| 26.3 | Fabric | `stardewdelight-fabric-26.3-1.0.0.jar` | Refabricated 26.3-3.6.30, Fabric API 0.166.2 |
+| 26.2 | Fabric | `stardewdelight-fabric-26.2-1.0.0.jar` | Refabricated 26.2-3.6.30, Fabric API 0.161.0 |
+| 26.1 – 26.1.2 | Fabric | `stardewdelight-fabric-26.1-1.0.0.jar` | Refabricated 26.1-3.6.30, Fabric API 0.155.3 |
+| 1.21.11 | Fabric | `stardewdelight-fabric-1.21.11-1.0.0.jar` | Refabricated 1.21.11-3.6.16, Fabric API 0.141.6 |
+| 1.21.9 – 1.21.10 | Fabric | `stardewdelight-fabric-1.21.10-1.0.0.jar` | Refabricated 1.21.10-3.4.2, Fabric API 0.138.4 |
+| 1.21.6 – 1.21.8 | Fabric | `stardewdelight-fabric-1.21.8-1.0.0.jar` | Refabricated 1.21.8-3.3.3, Fabric API 0.136.1 |
+| 1.21.5 | Fabric | `stardewdelight-fabric-1.21.5-1.0.0.jar` | Refabricated 1.21.5-3.2.5, Fabric API 0.128.2 |
+| 1.21.1 | NeoForge | `stardewdelight-neoforge-1.21.1-1.0.0.jar` | 1.21.1-1.3.4, NeoForge 21.1 |
+| 1.21.1 | Fabric | `stardewdelight-fabric-1.21.1-1.0.0.jar` | Refabricated 1.21.1-3.3.6, Fabric API 0.116.18 |
+| 1.20.1 | Forge, NeoForge | `stardewdelight-forge-1.20.1-1.0.0.jar` | 1.20.1-1.3.4, Forge 47 / NeoForge 47.1 |
+| 1.20.1 | Fabric | `stardewdelight-fabric-1.20.1-1.0.0.jar` | Refabricated 1.20.1-2.5.7, Fabric API 0.92.12 |
+| 1.19.2 | Forge | `stardewdelight-forge-1.19.2-1.0.0.jar` | 1.19.2-1.2.4, Forge 43 |
+| 1.18.2 | Forge | `stardewdelight-forge-1.18.2-1.0.0.jar` | 1.18.2-1.2.3, Forge 40 |
+
+Во всех версиях одинаковые 78 блюд, рецепты, эффекты и текстуры. Каждая сборка проверена на выделенном сервере
+самотестом: все 78 рецептов загрузились, каждое блюдо съедено (эффекты и возвращаемая тара), Иммунитет блокирует и
+снимает дебаффы.
 
 ## Что изменилось по сравнению со Stardew Kitchen
 * Блюда готовятся в **кастрюле Farmer's Delight** (супы, рагу, горячие блюда), на **верстаке** (салаты, выпечка, бутерброды) и на **разделочной доске** (сашими).
@@ -31,20 +52,31 @@ the cooking pot, at the crafting table and on the cutting board. The mod page te
   Салаты, сладкое, снеки и напитки — без них, как у самого Farmer's Delight.
 * Текстуры нарисованы в стиле Farmer's Delight: та же деревянная миска и широкая миска для вторых блюд, стеклянная кружка
   для напитков, отступы по краям, контуры тёмным оттенком своего цвета, без чистого белого и чёрного.
-* В рецептах — теги Forge, как у самого FD (`#forge:crops/carrot`, `#forge:crops/potato`, `#forge:crops/beetroot`,
-  `#forge:crops/wheat`, `#forge:raw_fishes/cod`, `#forge:crops/onion`, `#forge:milk` и т. д.), поэтому подходят культуры
-  и рыба из других модов.
+* В рецептах — общие теги загрузчика, как у самого FD: на Forge — `#forge:crops/carrot`, `#forge:crops/potato`,
+  `#forge:crops/onion`, `#forge:raw_fishes/cod`, `#forge:milk` и т. д., на NeoForge и Fabric — `#c:crops/carrot`,
+  `#c:crops/onion`, `#c:drinks/milk`, `#c:foods/dough` и т. д., поэтому подходят культуры и рыба из других модов.
 * Свои эффекты **Магнетизм** и **Иммунитет к дебаффам** сохранены.
 * Блюда добавлены в теги FD `farmersdelight:meals / sweets / snacks / drinks`.
 * «Яичница» и «Хлеб» не дублируются — используются `farmersdelight:fried_egg` и `minecraft:bread`. Получается 78 собственных блюд + 2 из FD/ванили = все 80.
 * Рецепты открываются в книге рецептов, как только подобран любой ингредиент.
 
 ## Сборка
+Один исходник на все версии — [Stonecutter](https://stonecutter.kikugie.dev/) 0.10: Forge через ModDevGradle Legacy,
+NeoForge через ModDevGradle, Fabric через Loom. Сам Gradle запускается на **JDK 25** (этого требует Stonecutter),
+JDK 17 / 21 / 25 для компиляции каждой версии Gradle скачает сам через toolchain.
 ```
-./gradlew build      # Windows: gradlew.bat build
+dev\gw.bat buildAndCollect                   # все версии (JDK 25 берётся из %JDK25%; Linux/macOS: JAVA_HOME=<JDK 25> ./gradlew buildAndCollect)
+dev\gw.bat :1.21.1-fabric:buildAndCollect    # одна версия
+python dev/build_all.py                      # все версии по очереди, сводка и лог каждой в build/logs/
+python dev/check_jars.py                     # проверка готовых jar без запуска игры
 ```
-Готовый jar: `build/libs/stardewdelight-1.20.1-1.0.0.jar`.
-Для запуска Gradle нужна установленная Java 17 или новее (например, Temurin 17 или 21); JDK 17 для компиляции Gradle скачает сам через toolchain.
+Готовые jar: `build/libs/1.0.0/stardewdelight-<загрузчик>-<версия MC>-1.0.0.jar`.
+Версия, открытая в IDE, переключается задачей `"Set active project to 1.21.1-fabric"` (по умолчанию — 26.3-fabric).
+Версии, загрузчики и зависимости — в `settings.gradle.kts` и `stonecutter.properties.toml`, различия кода между
+версиями — комментарии Stonecutter `//? if >=1.21.2 {` прямо в исходниках.
+
+Самотест на сервере: запустите сервер с `-Dstardewdelight.selftest=true` — после старта в лог попадёт строка
+`SELFTEST DONE: 158 ok, 0 failed` (78 рецептов, 78 блюд, 2 проверки Иммунитета).
 
 Первый запуск после клонирования (достаёт переводы и иконки эффектов из jar Stardew Kitchen, рисует текстуры блюд,
 качает Gradle wrapper, генерирует код, данные и оформление):
@@ -52,7 +84,9 @@ the cooking pot, at the crafting table and on the cutting board. The mod page te
 python tools/bootstrap.py "../StardewKitchen/stardewkitchen-1.0.0.jar"
 ```
 
-Предметы, рецепты, модели, теги и языки генерируются скриптом `tools/gen.py`:
+Список блюд (`Dishes.java`), модели и языки, а для каждой версии — рецепты, достижения, теги, определения предметов и
+`pack.mcmeta` в формате своей версии Minecraft и своего загрузчика (`versions/<версия>/generated`) генерируются скриптом
+`tools/gen.py`:
 ```
 python3 tools/gen.py
 ```

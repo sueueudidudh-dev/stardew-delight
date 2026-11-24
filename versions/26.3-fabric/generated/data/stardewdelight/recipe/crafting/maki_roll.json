@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/safe_raw_fish",
+    "minecraft:dried_kelp",
+    "farmersdelight:cooked_rice"
+  ],
+  "result": {
+    "id": "stardewdelight:maki_roll"
+  }
+}

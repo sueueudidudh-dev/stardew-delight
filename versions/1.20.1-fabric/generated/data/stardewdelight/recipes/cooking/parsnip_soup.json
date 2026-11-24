@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:crops/carrot"
+    },
+    {
+      "tag": "c:crops/carrot"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:parsnip_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

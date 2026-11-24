@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/potato",
+    "minecraft:sugar",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "stardewdelight:glazed_yams"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

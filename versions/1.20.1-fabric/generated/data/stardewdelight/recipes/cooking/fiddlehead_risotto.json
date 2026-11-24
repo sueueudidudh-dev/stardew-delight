@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:crops/rice"
+    },
+    {
+      "item": "minecraft:fern"
+    },
+    {
+      "tag": "c:crops/onion"
+    },
+    {
+      "tag": "c:milks"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:fiddlehead_risotto"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

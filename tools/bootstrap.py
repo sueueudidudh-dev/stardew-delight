@@ -6,8 +6,8 @@
 1. Достаёт из jar Stardew Kitchen иконки эффектов и языковые файлы (tools/lang).
    Текстуры блюд оттуда больше не берутся: они рисуются в стиле Farmer's Delight скриптом tools/fd_textures.py.
 2. Скачивает Gradle wrapper (gradlew, gradlew.bat, gradle-wrapper.jar), если его нет.
-3. Запускает tools/fd_textures.py (текстуры блюд), tools/gen.py (код предметов, рецепты, модели, теги, языки)
-   и dev/art (оформление страницы мода).
+3. Запускает tools/fd_textures.py (текстуры блюд), tools/gen.py (список блюд, рецепты и теги для каждой версии
+   Minecraft, модели, языки) и dev/art (оформление страницы мода).
 """
 import subprocess
 import sys
@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_JAR = ROOT.parent / "StardewKitchen" / "stardewkitchen-1.0.0.jar"
 SRC = "assets/stardewkitchen/"
 DST = ROOT / "src/main/resources/assets/stardewdelight"
-GRADLE = "https://raw.githubusercontent.com/gradle/gradle/v8.14.3/"
+GRADLE = "https://raw.githubusercontent.com/gradle/gradle/v9.9.2/"
 WRAPPER = ["gradlew", "gradlew.bat", "gradle/wrapper/gradle-wrapper.jar"]
 
 

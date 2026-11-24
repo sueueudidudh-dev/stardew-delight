@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    "#c:crops/carrot",
+    "#c:crops/carrot",
+    "minecraft:sugar",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "stardewdelight:ginger_ale"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

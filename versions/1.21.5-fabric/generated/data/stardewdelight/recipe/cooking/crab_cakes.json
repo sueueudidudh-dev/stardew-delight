@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:tropical_fish",
+    "#c:foods/dough",
+    "#c:eggs",
+    "minecraft:sunflower"
+  ],
+  "result": {
+    "id": "stardewdelight:crab_cakes"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

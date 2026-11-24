@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:crops/cabbage",
+    "#c:crops/beetroot",
+    "#c:eggs",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:coleslaw"
+  }
+}

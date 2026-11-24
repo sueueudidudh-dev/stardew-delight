@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:kelp",
+    "minecraft:kelp",
+    "minecraft:kelp"
+  ],
+  "result": {
+    "id": "stardewdelight:algae_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    {
+      "item": "stardewdelight:omelet"
+    },
+    {
+      "tag": "c:crops/carrot"
+    },
+    {
+      "tag": "c:salad_ingredients"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:farmers_lunch"
+  }
+}

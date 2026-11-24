@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:foods/safe_raw_fish",
+    "#c:foods/safe_raw_fish",
+    "#c:crops/wheat"
+  ],
+  "result": {
+    "id": "stardewdelight:baked_fish"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

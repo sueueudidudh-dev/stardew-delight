@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "farmersdelight:pie_crust",
+    "farmersdelight:pumpkin_slice",
+    "minecraft:sugar",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "stardewdelight:pumpkin_pie"
+  }
+}

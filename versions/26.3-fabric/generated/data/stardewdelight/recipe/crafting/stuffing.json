@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/bread",
+    "minecraft:sweet_berries",
+    "stardewdelight:roasted_hazelnuts",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:stuffing"
+  }
+}

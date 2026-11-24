@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/cooked_fish",
+    "#c:foods/cooked_fish",
+    "stardewdelight:hashbrowns",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:dish_o_the_sea"
+  }
+}

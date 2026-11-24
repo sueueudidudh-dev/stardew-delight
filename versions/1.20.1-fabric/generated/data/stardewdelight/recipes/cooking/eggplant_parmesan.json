@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "tag": "c:crops/beetroot"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:foods/doughs"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:eggplant_parmesan"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

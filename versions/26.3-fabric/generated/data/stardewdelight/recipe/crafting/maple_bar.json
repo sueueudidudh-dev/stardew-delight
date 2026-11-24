@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "minecraft:honey_bottle",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:maple_bar"
+  }
+}

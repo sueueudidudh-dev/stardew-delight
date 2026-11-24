@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "stardewdelight:chocolate_cake",
+    "stardewdelight:pink_cake",
+    "stardewdelight:rhubarb_pie",
+    "stardewdelight:cookie",
+    "stardewdelight:rice_pudding",
+    "stardewdelight:ice_cream",
+    "stardewdelight:blueberry_tart",
+    "stardewdelight:cranberry_sauce",
+    "stardewdelight:miners_treat",
+    "stardewdelight:seafoam_pudding",
+    "stardewdelight:plum_pudding",
+    "stardewdelight:pumpkin_pie",
+    "stardewdelight:fruit_salad",
+    "stardewdelight:blackberry_cobbler",
+    "stardewdelight:cranberry_candy",
+    "stardewdelight:poppyseed_muffin",
+    "stardewdelight:maple_bar",
+    "stardewdelight:banana_pudding",
+    "stardewdelight:mango_sticky_rice"
+  ]
+}

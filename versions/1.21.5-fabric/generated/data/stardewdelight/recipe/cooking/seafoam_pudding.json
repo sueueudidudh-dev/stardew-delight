@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:foods/safe_raw_fish",
+    "#c:foods/safe_raw_fish",
+    "minecraft:ink_sac",
+    "#c:foods/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:seafoam_pudding"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:tropical_fish",
+    "minecraft:tropical_fish",
+    "#c:foods/milk",
+    "#c:crops/tomato"
+  ],
+  "result": {
+    "id": "stardewdelight:lobster_bisque"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

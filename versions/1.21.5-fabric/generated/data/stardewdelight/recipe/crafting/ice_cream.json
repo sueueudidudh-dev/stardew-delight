@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/milk",
+    "minecraft:sugar",
+    "minecraft:snowball",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:ice_cream"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:slime_ball",
+    "#c:crops/onion",
+    "minecraft:sunflower"
+  ],
+  "result": {
+    "id": "stardewdelight:escargot"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

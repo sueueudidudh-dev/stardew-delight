@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:foods/dough",
+    "#c:foods/safe_raw_fish",
+    "minecraft:chorus_fruit"
+  ],
+  "result": {
+    "id": "stardewdelight:strange_bun"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

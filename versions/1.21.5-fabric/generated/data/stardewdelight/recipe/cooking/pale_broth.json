@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:dried_kelp",
+    "minecraft:dried_kelp",
+    "minecraft:bone_meal"
+  ],
+  "result": {
+    "id": "stardewdelight:pale_broth"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

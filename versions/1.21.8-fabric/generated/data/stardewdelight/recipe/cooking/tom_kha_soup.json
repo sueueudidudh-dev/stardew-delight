@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:tropical_fish",
+    "minecraft:brown_mushroom",
+    "#c:foods/milk",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:tom_kha_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

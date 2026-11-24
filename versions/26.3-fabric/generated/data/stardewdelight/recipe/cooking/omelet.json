@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:eggs",
+    "#c:eggs",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:omelet"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

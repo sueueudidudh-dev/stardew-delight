@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:cod",
+    "minecraft:cod",
+    "minecraft:cod",
+    "minecraft:cod"
+  ],
+  "result": {
+    "id": "stardewdelight:carp_surprise"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

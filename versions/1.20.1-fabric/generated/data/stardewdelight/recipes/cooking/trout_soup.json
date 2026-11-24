@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes/salmon"
+    },
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:trout_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

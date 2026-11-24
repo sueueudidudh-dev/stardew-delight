@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "farmersdelight:fried_egg",
+    "#c:drinks/milk",
+    "stardewdelight:hashbrowns",
+    "stardewdelight:pancakes",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:complete_breakfast"
+  }
+}

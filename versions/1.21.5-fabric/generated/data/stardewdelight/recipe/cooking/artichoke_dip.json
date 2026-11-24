@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:fern",
+    "#c:foods/milk",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:artichoke_dip"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "forge:crops/tomato"
+    },
+    {
+      "tag": "forge:crops/beetroot"
+    },
+    {
+      "tag": "forge:crops/carrot"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:vegetable_medley"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

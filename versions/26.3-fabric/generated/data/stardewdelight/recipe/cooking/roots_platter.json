@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/carrot",
+    "#c:crops/potato",
+    "minecraft:glow_berries"
+  ],
+  "result": {
+    "id": "stardewdelight:roots_platter"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

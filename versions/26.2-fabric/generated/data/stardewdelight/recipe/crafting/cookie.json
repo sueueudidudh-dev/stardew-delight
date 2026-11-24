@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "minecraft:sugar",
+    "#c:eggs"
+  ],
+  "result": {
+    "id": "stardewdelight:cookie",
+    "count": 4
+  }
+}

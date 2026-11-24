@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:ink_sac",
+    "minecraft:ink_sac",
+    "#c:foods/dough"
+  ],
+  "result": {
+    "id": "stardewdelight:fried_calamari"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

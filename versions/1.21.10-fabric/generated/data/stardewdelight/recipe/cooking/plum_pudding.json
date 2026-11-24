@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:apple",
+    "minecraft:apple",
+    "#c:crops/wheat",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:plum_pudding"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

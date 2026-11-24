@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:pumpkin_seeds",
+    "minecraft:pumpkin_seeds",
+    "minecraft:pumpkin_seeds"
+  ],
+  "result": {
+    "id": "stardewdelight:roasted_hazelnuts"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

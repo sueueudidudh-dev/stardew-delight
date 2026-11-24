@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/potato",
+    "#c:crops/potato",
+    "#c:crops/potato",
+    "#c:crops/potato"
+  ],
+  "result": {
+    "id": "stardewdelight:poi"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

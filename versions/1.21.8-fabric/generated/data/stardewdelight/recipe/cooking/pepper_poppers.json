@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "minecraft:blaze_powder",
+    "#c:foods/milk",
+    "#c:crops/tomato"
+  ],
+  "result": {
+    "id": "stardewdelight:pepper_poppers"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

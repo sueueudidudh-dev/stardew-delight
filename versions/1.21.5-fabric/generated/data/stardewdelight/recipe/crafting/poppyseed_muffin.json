@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "minecraft:poppy",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:poppyseed_muffin"
+  }
+}

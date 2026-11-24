@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes"
+    },
+    {
+      "tag": "c:foods/raw_fishes"
+    },
+    {
+      "tag": "c:crops/wheat"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:baked_fish"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

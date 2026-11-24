@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "farmersdelight:pie_crust",
+    "minecraft:sweet_berries",
+    "minecraft:sweet_berries",
+    "#c:eggs"
+  ],
+  "result": {
+    "id": "stardewdelight:blueberry_tart"
+  }
+}

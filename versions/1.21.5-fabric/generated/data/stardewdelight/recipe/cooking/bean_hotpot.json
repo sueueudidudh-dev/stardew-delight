@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:pumpkin_seeds",
+    "minecraft:pumpkin_seeds",
+    "farmersdelight:tomato_sauce",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:bean_hotpot"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

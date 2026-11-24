@@ -1,0 +1,13 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:cod",
+    "minecraft:sunflower"
+  ],
+  "result": {
+    "id": "stardewdelight:fried_eel"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

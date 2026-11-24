@@ -1,27 +1,41 @@
 """Генератор кода и данных для Stardew Delight.
-Читает tools/items.json (параметры блюд, перенесённые из Stardew Kitchen) и таблицу рецептов ниже,
-создаёт ModItems.java, рецепты, достижения-разблокировки, модели, теги и языковые файлы.
+
+Читает tools/items.json (параметры блюд, перенесённые из Stardew Kitchen) и таблицу рецептов ниже и пишет:
+  * src/main/java/com/stardewdelight/Dishes.java — список блюд (одинаковый для всех версий);
+  * общие ассеты: модели предметов и языковые файлы (src/main/resources/assets/stardewdelight);
+  * данные для каждой версии Minecraft и загрузчика (versions/<версия>-<загрузчик>/generated):
+    рецепты, достижения-разблокировки, теги категорий Farmer's Delight, определения предметов (1.21.4+)
+    и pack.mcmeta (Forge). Форматы и теги в каждой версии свои — см. TARGETS.
+
 Заодно проверяет, что всё устроено как в Farmer's Delight: блюда из meals — в миске, снеки — в руках,
-у рецептов на верстаке есть миска, тара на текстуре (tools/fd_textures.py) совпадает с тарой предмета."""
-import json, os, re, shutil, sys
+у рецептов на верстаке есть миска, тара на текстуре (tools/fd_textures.py) совпадает с тарой предмета.
+
+  python tools/gen.py            — всё
+  python tools/gen.py --check    — только проверки
+"""
+import json
+import os
+import shutil
+import sys
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MOD = 'stardewdelight'
 RES = os.path.join(ROOT, 'src/main/resources')
-JAVA = os.path.join(ROOT, 'src/main/java/com/stardewdelight/ModItems.java')
+DISHES_JAVA = os.path.join(ROOT, 'src/main/java/com/stardewdelight/Dishes.java')
 
 SKIP = {'fried_egg', 'bread'}  # уже есть: farmersdelight:fried_egg и minecraft:bread
-items = [i for i in json.load(open(os.path.join(ROOT, 'tools/items.json'))) if i['id'] not in SKIP]
+items = [i for i in json.load(open(os.path.join(ROOT, 'tools/items.json'), encoding='utf-8')) if i['id'] not in SKIP]
 
-EFFECT_MAP = {  # имена 26.x -> 1.20.1 (official mappings)
-    'HASTE': 'MobEffects.DIG_SPEED', 'SPEED': 'MobEffects.MOVEMENT_SPEED', 'JUMP_BOOST': 'MobEffects.JUMP',
-    'RESISTANCE': 'MobEffects.DAMAGE_RESISTANCE', 'STRENGTH': 'MobEffects.DAMAGE_BOOST', 'NAUSEA': 'MobEffects.CONFUSION',
-    'ABSORPTION': 'MobEffects.ABSORPTION', 'NIGHT_VISION': 'MobEffects.NIGHT_VISION', 'LUCK': 'MobEffects.LUCK',
-    'HERO_OF_THE_VILLAGE': 'MobEffects.HERO_OF_THE_VILLAGE', 'WATER_BREATHING': 'MobEffects.WATER_BREATHING',
-    'DOLPHINS_GRACE': 'MobEffects.DOLPHINS_GRACE', 'FIRE_RESISTANCE': 'MobEffects.FIRE_RESISTANCE',
-    'REGENERATION': 'MobEffects.REGENERATION',
-    'SK_MAGNETISM': 'ModEffects.MAGNETISM.get()', 'SK_IMMUNITY': 'ModEffects.IMMUNITY.get()',
-    'FD_COMFORT': 'vectorwing.farmersdelight.common.registry.ModEffects.COMFORT.get()',
-    'FD_NOURISHMENT': 'vectorwing.farmersdelight.common.registry.ModEffects.NOURISHMENT.get()',
+# Имена эффектов в items.json -> id в реестре (id не меняются от версии к версии, в отличие от имён полей MobEffects)
+EFFECT_ID = {
+    'HASTE': 'minecraft:haste', 'SPEED': 'minecraft:speed', 'JUMP_BOOST': 'minecraft:jump_boost',
+    'RESISTANCE': 'minecraft:resistance', 'STRENGTH': 'minecraft:strength', 'NAUSEA': 'minecraft:nausea',
+    'ABSORPTION': 'minecraft:absorption', 'NIGHT_VISION': 'minecraft:night_vision', 'LUCK': 'minecraft:luck',
+    'HERO_OF_THE_VILLAGE': 'minecraft:hero_of_the_village', 'WATER_BREATHING': 'minecraft:water_breathing',
+    'DOLPHINS_GRACE': 'minecraft:dolphins_grace', 'FIRE_RESISTANCE': 'minecraft:fire_resistance',
+    'REGENERATION': 'minecraft:regeneration',
+    'SK_MAGNETISM': f'{MOD}:magnetism', 'SK_IMMUNITY': f'{MOD}:immunity',
+    'FD_COMFORT': 'farmersdelight:comfort', 'FD_NOURISHMENT': 'farmersdelight:nourishment',
 }
 
 # Эффекты Farmer's Delight, как у его собственных блюд: «Уют» (Comfort) — горячие супы и рагу,
@@ -54,7 +68,7 @@ SWEETS = {'cranberry_sauce', 'rice_pudding', 'plum_pudding', 'banana_pudding', '
 SNACKS = {'tortilla', 'roasted_hazelnuts', 'sashimi', 'maki_roll', 'bruschetta', 'hashbrowns', 'pancakes', 'fried_calamari',
           'strange_bun', 'pepper_poppers', 'omelet', 'lucky_lunch', 'pizza', 'fish_taco', 'survival_burger', 'crab_cakes'}
 DROP_LANG = {'tooltip.stardewkitchen.effects'}  # осталось от Stardew Kitchen, в моде не используется
-# Ванильные продукты с общим тегом Forge: в рецептах — только тег (как у самого FD), чтобы подходили культуры других модов.
+# Ванильные продукты с общим тегом: в рецептах — только тег (как у самого FD), чтобы подходили культуры других модов.
 VANILLA_WITH_TAG = {'minecraft:carrot': '#forge:crops/carrot', 'minecraft:potato': '#forge:crops/potato',
                     'minecraft:beetroot': '#forge:crops/beetroot', 'minecraft:wheat': '#forge:crops/wheat',
                     'minecraft:cod': '#forge:raw_fishes/cod'}
@@ -67,6 +81,7 @@ def category(it):
 # ---------------------------------------------------------------------------------------------------------------
 # Рецепты. pot = кастрюля FD (cooking pot), craft = верстак (shapeless), cut = разделочная доска с ножом.
 # "#тег" — тег предмета, иначе id предмета. Префикс "sd:" = наш мод, "fd:" = farmersdelight.
+# Теги записаны в именах Forge 1.20.1 (#forge:...) — для других версий их переводит TAGS ниже.
 # Для блюд в миске/бутылке кастрюля сама требует тару (берётся из craftRemainder предмета).
 # ---------------------------------------------------------------------------------------------------------------
 R = [
@@ -158,17 +173,118 @@ R = [
  ('sashimi', 'cut', ['minecraft:tropical_fish'], {'count': 2}),
 ]
 
-def rid(s):
-    return s.replace('sd:', MOD + ':').replace('fd:', 'farmersdelight:')
+# ---------------------------------------------------------------------------------------------------------------
+# Версии Minecraft и загрузчики (как в settings.gradle.kts). У каждой — свои теги, формат рецептов Farmer's Delight
+# и формат данных Minecraft. Теги проверены по jar-файлам FD, Forge/NeoForge и Fabric API каждой версии:
+# все существуют и не пустые. Поле tool — ровно как в рецепте разделочной доски самого FD (cutting/cod.json).
+# ---------------------------------------------------------------------------------------------------------------
+CROPS = ['potato', 'onion', 'carrot', 'tomato', 'beetroot', 'rice', 'cabbage', 'wheat']
+_FORGE_TAGS = ['#forge:eggs', '#forge:milk', '#forge:dough', '#forge:salad_ingredients', '#forge:raw_fishes',
+               '#forge:raw_fishes/cod', '#forge:raw_fishes/salmon', '#forge:raw_fishes/tropical_fish',
+               '#forge:cooked_fishes', '#forge:pasta', '#forge:bread'] + [f'#forge:crops/{c}' for c in CROPS]
+TAGS = {
+    # Forge 1.18.2 - 1.20.1: теги forge:*
+    'forge': {t: t for t in _FORGE_TAGS},
+    # Fabric 1.20.1 (Farmer's Delight Refabricated 2.x): старые общие теги c:*, во множественном числе
+    'fab120': {**{f'#forge:crops/{c}': f'#c:crops/{c}' for c in CROPS},
+               '#forge:eggs': '#c:eggs', '#forge:milk': '#c:milks', '#forge:dough': '#c:foods/doughs',
+               '#forge:salad_ingredients': '#c:salad_ingredients', '#forge:raw_fishes': '#c:foods/raw_fishes',
+               '#forge:raw_fishes/cod': '#c:foods/raw_fishes/cod', '#forge:raw_fishes/salmon': '#c:foods/raw_fishes/salmon',
+               '#forge:raw_fishes/tropical_fish': '#c:foods/raw_fishes/tropical_fish',
+               '#forge:cooked_fishes': '#c:foods/cooked_fishes', '#forge:pasta': '#c:foods/pastas', '#forge:bread': '#c:foods/breads'},
+    # NeoForge 1.21.1 и Fabric 1.21.1+: общие теги c:* нового образца. Отдельных тегов для трески, лосося и
+    # тропической рыбы нет во всех версиях — там сами предметы. «Любая рыба» — c:foods/safe_raw_fish (без иглобрюха).
+    'c': {**{f'#forge:crops/{c}': f'#c:crops/{c}' for c in CROPS},
+          '#forge:eggs': '#c:eggs', '#forge:milk': '#c:drinks/milk', '#forge:dough': '#c:foods/dough',
+          '#forge:salad_ingredients': '#c:foods/leafy_green', '#forge:raw_fishes': '#c:foods/safe_raw_fish',
+          '#forge:raw_fishes/cod': 'minecraft:cod', '#forge:raw_fishes/salmon': 'minecraft:salmon',
+          '#forge:raw_fishes/tropical_fish': 'minecraft:tropical_fish',
+          '#forge:cooked_fishes': '#c:foods/cooked_fish', '#forge:pasta': '#c:foods/pasta', '#forge:bread': '#c:foods/bread'},
+}
+# В FD Refabricated для 1.21.5 - 1.21.10 молочная бутылка лежит в c:foods/milk (в остальных версиях — c:drinks/milk)
+FOODS_MILK = {'#forge:milk': '#c:foods/milk'}
 
-def ing(s):
-    s = rid(s)
-    return {'tag': s[1:]} if s.startswith('#') else {'item': s}
+_TOOL_FORGE_OLD = {'tag': 'forge:tools/knives'}
+_TOOL_FORGE = [{'type': 'farmersdelight:tool_action', 'action': 'knife_dig'}, {'tag': 'forge:tools/knives'}]
+_TOOL_NEO = [{'type': 'farmersdelight:item_ability', 'action': 'knife_dig'}, {'tag': 'c:tools/knife'}]
+_TOOL_FAB121 = {'fabric:type': 'fabric:any', 'ingredients': [{'fabric:type': 'farmersdelight:item_ability', 'action': 'knife_dig'},
+                                                             {'tag': 'c:tools/knife'}]}
+TARGETS = {
+    '1.18.2-forge': dict(tags='forge', tool=_TOOL_FORGE_OLD, pack=(8, 9)),
+    '1.19.2-forge': dict(tags='forge', tool=_TOOL_FORGE_OLD, pack=(9, 10)),
+    '1.20.1-forge': dict(tags='forge', tool=_TOOL_FORGE, pack=(15, 15)),
+    '1.20.1-fabric': dict(tags='fab120', tool={'tag': 'c:tools/knives'}),
+    '1.21.1-neoforge': dict(tags='c', tool=_TOOL_NEO),
+    '1.21.1-fabric': dict(tags='c', tool=_TOOL_FAB121),
+    '1.21.5-fabric': dict(tags='c', extra=FOODS_MILK, tool='#c:tools/knife', tab_key='category'),
+    '1.21.8-fabric': dict(tags='c', extra=FOODS_MILK, tool='#c:tools/knife'),
+    '1.21.10-fabric': dict(tags='c', extra=FOODS_MILK, tool='#c:tools/knife'),
+    '1.21.11-fabric': dict(tags='c', tool='#c:tools/knife'),
+    '26.1-fabric': dict(tags='c', tool='#c:tools/knife'),
+    '26.2-fabric': dict(tags='c', tool='#c:tools/knife'),
+    '26.3-fabric': dict(tags='c', tool='#c:tools/knife'),
+}
+
+
+def ver(s):
+    return tuple(int(x) for x in s.split('.'))
+
+
+class Target:
+    """Формат данных одной версии Minecraft + загрузчика."""
+
+    def __init__(self, name, spec):
+        self.name = name
+        self.mc = ver(name.split('-')[0])
+        self.loader = name.split('-')[1]
+        self.tags = dict(TAGS[spec['tags']], **spec.get('extra', {}))
+        self.tool = spec['tool']
+        self.pack = spec.get('pack')
+        self.tab_key = spec.get('tab_key', 'recipe_book_tab')
+        mc = self.mc
+        self.plural = mc < (1, 21)                 # recipes/, advancements/, tags/items/ — до 1.21
+        self.result_key = 'item' if mc < (1, 20, 5) else 'id'
+        self.string_ingredients = mc >= (1, 21, 2)  # ингредиенты строками "id" / "#тег"
+        self.holder_predicates = mc >= (1, 20, 5)   # {"items": "id"} / {"items": "#тег"} в достижениях
+        self.craft_category = mc < (26, 2)          # с 26.2 у ванильных рецептов верстака нет поля category
+        self.unlock_key = 'recipes' if mc >= (26, 3) else 'recipe'
+        self.item_models = mc >= (1, 21, 4)         # assets/<ns>/items/<id>.json
+        self.out = os.path.join(ROOT, 'versions', name, 'generated')
+
+    def map(self, s):
+        s = self.tags.get(s, s)
+        return s.replace('sd:', MOD + ':').replace('fd:', 'farmersdelight:')
+
+    def ingredient(self, s):
+        s = self.map(s)
+        if self.string_ingredients:
+            return s
+        return {'tag': s[1:]} if s.startswith('#') else {'item': s}
+
+    def stack(self, item, count=1):
+        res = {self.result_key: item}
+        if count > 1:
+            res['count'] = count
+        return res
+
+    def predicate(self, s):
+        s = self.map(s)
+        if self.holder_predicates:
+            return {'items': s}
+        return {'tag': s[1:]} if s.startswith('#') else {'items': [s]}
+
+    def dirs(self):
+        if self.plural:
+            return 'recipes', 'advancements', 'tags/items'
+        return 'recipe', 'advancement', 'tags/item'
+
 
 def wjson(path, obj):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
-        json.dump(obj, f, indent=2, ensure_ascii=False); f.write('\n')
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+
 
 def check(byid):
     """Правила Farmer's Delight, которые легко нарушить при правке таблиц."""
@@ -183,6 +299,9 @@ def check(byid):
             errors.append(f'{i}: напиток должен быть в бутылке (container GLASS_BOTTLE)')
         if cat == 'snacks' and (cont is not None or i in FD_EXTRA):
             errors.append(f'{i}: снек едят с руки — без тары и без Comfort/Nourishment')
+        for e, _, _ in it['effects']:
+            if e not in EFFECT_ID:
+                errors.append(f'{i}: неизвестный эффект {e} — добавьте его в EFFECT_ID')
         spec = fd_textures.DISHES.get(i)
         want = {'BOWL': ('deep', 'wide'), 'GLASS_BOTTLE': ('glass',), None: (None,)}[cont]
         if spec is None:
@@ -199,8 +318,136 @@ def check(byid):
         for x in ings:
             if x in VANILLA_WITH_TAG:
                 errors.append(f'{name}: {x} -> {VANILLA_WITH_TAG[x]}')
+            if x.startswith('#') and any(x not in TAGS[k] for k in TAGS):
+                errors.append(f'{name}: тег {x} не переведён для всех версий — добавьте его в TAGS')
     if errors:
         sys.exit('Ошибки:\n  ' + '\n  '.join(errors))
+
+
+def write_dishes():
+    """Dishes.java: блюда одинаковы для всех версий — эффекты задаются id, а не полями MobEffects."""
+    cont = {'BOWL': 'BOWL', 'GLASS_BOTTLE': 'BOTTLE', None: 'NONE'}
+    lines = []
+    for it in items:
+        effs = list(it['effects'])
+        if it['id'] in FD_EXTRA:
+            e, d = FD_EXTRA[it['id']]
+            effs.insert(0, [e, d, 0])
+        s = f'new Dish("{it["id"]}", Dish.Container.{cont[it["container"]]}, {it["nut"]}, {it["sat"]}F)'
+        if it['always']:
+            s += '.always()'
+        if it['drink']:
+            s += '.drink()'
+        if it['teleport']:
+            s += '.teleport()'
+        for e, d, a in effs:
+            s += f'\n                    .fx("{EFFECT_ID[e]}", {d}, {a})'
+        lines.append('            ' + s)
+    java = f'''package com.stardewdelight;
+
+// СГЕНЕРИРОВАНО tools/gen.py — правьте tools/items.json или gen.py, а не этот файл.
+
+import java.util.List;
+
+/** Все блюда мода в порядке вкладки творческого режима. */
+public final class Dishes {{
+    public static final List<Dish> ALL = List.of(
+{(",\n").join(lines)});
+
+    private Dishes() {{}}
+
+    public static Dish byId(String id) {{
+        for (Dish dish : ALL) if (dish.id.equals(id)) return dish;
+        throw new IllegalArgumentException("Unknown dish " + id);
+    }}
+}}
+'''
+    with open(DISHES_JAVA, 'w', encoding='utf-8') as f:
+        f.write(java)
+
+
+def write_assets():
+    """Модели предметов и языки — общие для всех версий."""
+    mdir = os.path.join(RES, 'assets', MOD, 'models', 'item')
+    shutil.rmtree(mdir, ignore_errors=True)
+    for it in items:
+        wjson(os.path.join(mdir, it['id'] + '.json'), {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{MOD}:item/{it["id"]}'}})
+    for lang in ('en_us', 'ru_ru'):
+        src = json.load(open(os.path.join(ROOT, 'tools', 'lang', lang + '.json'), encoding='utf-8'))
+        out = {}
+        for k, v in src.items():
+            if k in DROP_LANG:
+                continue
+            k = k.replace('stardewkitchen', MOD)
+            if k.startswith('item.') and k.split('.')[-1] in SKIP:
+                continue
+            out[k] = v
+        out['itemGroup.' + MOD] = 'Stardew Delight'
+        wjson(os.path.join(RES, 'assets', MOD, 'lang', lang + '.json'), out)
+
+
+def write_target(t):
+    """Рецепты, достижения, теги и прочее для одной версии в versions/<name>/generated."""
+    shutil.rmtree(t.out, ignore_errors=True)
+    rec_dir, adv_dir, tag_dir = t.dirs()
+    data = os.path.join(t.out, 'data')
+    for r in R:
+        name, st, ings = r[0], r[1], r[2]
+        opt = r[3] if len(r) > 3 else {}
+        count = opt.get('count', 1)
+        res_id = f'{MOD}:{name}'
+        if st == 'pot':
+            assert len(ings) <= 6
+            obj = {'type': 'farmersdelight:cooking', t.tab_key: opt.get('tab', 'meals'),
+                   'ingredients': [t.ingredient(x) for x in ings], 'result': t.stack(res_id, count),
+                   'experience': 1.0, 'cookingtime': 200}
+            sub = 'cooking'
+        elif st == 'craft':
+            assert len(ings) <= 9
+            obj = {'type': 'minecraft:crafting_shapeless'}
+            if t.craft_category:
+                obj['category'] = 'misc'
+            obj.update({'group': MOD, 'ingredients': [t.ingredient(x) for x in ings], 'result': t.stack(res_id, count)})
+            sub = 'crafting'
+        elif st == 'cut':
+            res = t.stack(res_id, count) if t.plural else {'item': t.stack(res_id, count)}
+            obj = {'type': 'farmersdelight:cutting', 'ingredients': [t.ingredient(x) for x in ings], 'tool': t.tool, 'result': [res]}
+            sub = 'cutting'
+        wjson(os.path.join(data, MOD, rec_dir, sub, name + '.json'), obj)
+
+        rec_id = f'{MOD}:{sub}/{name}'
+        crit = {'has_the_recipe': {'trigger': 'minecraft:recipe_unlocked', 'conditions': {t.unlock_key: rec_id}}}
+        uniq = []
+        for x in ings:
+            if x not in uniq and x != 'minecraft:bowl':
+                uniq.append(x)
+        for n, x in enumerate(uniq):
+            crit[f'has_ingredient_{n}'] = {'trigger': 'minecraft:inventory_changed', 'conditions': {'items': [t.predicate(x)]}}
+        wjson(os.path.join(data, MOD, adv_dir, 'recipes', sub, name + '.json'), {
+            'parent': 'minecraft:recipes/root', 'criteria': crit, 'requirements': [list(crit.keys())],
+            'rewards': {'recipes': [rec_id]}, 'sends_telemetry_event': False})
+
+    # Теги категорий Farmer's Delight
+    tags = {'drinks': [], 'meals': [], 'sweets': [], 'snacks': []}
+    for it in items:
+        tags[category(it)].append(f'{MOD}:{it["id"]}')
+    for k, v in tags.items():
+        wjson(os.path.join(data, 'farmersdelight', tag_dir, k + '.json'), {'replace': False, 'values': v})
+
+    # Определения предметов (assets/<ns>/items) — с 1.21.4
+    if t.item_models:
+        for it in items:
+            wjson(os.path.join(t.out, 'assets', MOD, 'items', it['id'] + '.json'),
+                  {'model': {'type': 'minecraft:model', 'model': f'{MOD}:item/{it["id"]}'}})
+
+    # pack.mcmeta нужен только Forge
+    if t.pack:
+        resource, datapack = t.pack
+        pack = {'description': 'Stardew Delight resources', 'pack_format': datapack}
+        if resource != datapack:
+            pack['forge:resource_pack_format'] = resource
+            pack['forge:data_pack_format'] = datapack
+        wjson(os.path.join(t.out, 'pack.mcmeta'), {'pack': pack})
 
 
 def main():
@@ -209,133 +456,15 @@ def main():
     assert len(ids) == len(set(ids)), 'дубли рецептов'
     assert set(ids) == set(byid), (set(byid) - set(ids), set(ids) - set(byid))
     check(byid)
+    if '--check' in sys.argv:
+        print(f'OK: {len(items)} блюд, {len(R)} рецептов, {len(TARGETS)} версий')
+        return
+    write_dishes()
+    write_assets()
+    for name, spec in TARGETS.items():
+        write_target(Target(name, spec))
+    print(f'OK: {len(items)} блюд, {len(R)} рецептов, данные для {len(TARGETS)} версий: {", ".join(TARGETS)}')
 
-    # ---------- ModItems.java ----------
-    lines = []
-    for it in items:
-        effs = list(it['effects'])
-        if it['id'] in FD_EXTRA:
-            e, d = FD_EXTRA[it['id']]; effs.insert(0, [e, d, 0])
-        b = f'food({it["nut"]}, {it["sat"]}F)'
-        if it['always']: b += '.alwaysEat()'
-        for e, d, a in effs:
-            b += f'\n                .effect(() -> new MobEffectInstance({EFFECT_MAP[e]}, {d}, {a}), 1.0F)'
-        props = {'BOWL': 'bowl', 'GLASS_BOTTLE': 'bottle', None: 'plate'}[it['container']]
-        cls = 'StardewDrinkItem' if it['drink'] else ('StrangeBunItem' if it['teleport'] else 'StardewFoodItem')
-        lines.append(f'    public static final RegistryObject<Item> {it["id"].upper()} = reg("{it["id"]}", () -> new {cls}({props}({b}\n                .build())));')
-    java = f'''package com.stardewdelight;
-
-// СГЕНЕРИРОВАНО tools/gen.py — правьте tools/items.json или gen.py, а не этот файл.
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-
-public final class ModItems {{
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, StardewDelight.MODID);
-    public static final List<RegistryObject<Item>> ALL = new ArrayList<>();
-
-    private ModItems() {{}}
-
-    private static RegistryObject<Item> reg(String id, Supplier<Item> sup) {{
-        RegistryObject<Item> ro = ITEMS.register(id, sup);
-        ALL.add(ro);
-        return ro;
-    }}
-
-    private static FoodProperties.Builder food(int nutrition, float saturation) {{
-        return new FoodProperties.Builder().nutrition(nutrition).saturationMod(saturation);
-    }}
-
-    /** Блюдо на тарелке / в руках. */
-    private static Item.Properties plate(FoodProperties food) {{
-        return new Item.Properties().food(food);
-    }}
-
-    /** Блюдо в миске: возвращает миску, стак 16 (как миски Farmer's Delight). */
-    private static Item.Properties bowl(FoodProperties food) {{
-        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
-    }}
-
-    /** Напиток в стеклянной бутылке. */
-    private static Item.Properties bottle(FoodProperties food) {{
-        return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
-    }}
-
-{chr(10).join(lines)}
-}}
-'''
-    open(JAVA, 'w', encoding='utf-8').write(java)
-
-    # ---------- рецепты + достижения ----------
-    rdir = os.path.join(RES, 'data', MOD, 'recipes'); adir = os.path.join(RES, 'data', MOD, 'advancements', 'recipes')
-    for d in (rdir, adir):
-        shutil.rmtree(d, ignore_errors=True)
-    for r in R:
-        name, st, ings = r[0], r[1], r[2]; opt = r[3] if len(r) > 3 else {}
-        res = {'item': f'{MOD}:{name}'}
-        if opt.get('count'): res['count'] = opt['count']
-        if st == 'pot':
-            assert len(ings) <= 6
-            obj = {'type': 'farmersdelight:cooking', 'recipe_book_tab': opt.get('tab', 'meals'),
-                   'ingredients': [ing(x) for x in ings], 'result': res, 'experience': 1.0, 'cookingtime': 200}
-            sub = 'cooking'
-        elif st == 'craft':
-            assert len(ings) <= 9
-            obj = {'type': 'minecraft:crafting_shapeless', 'category': 'misc', 'group': MOD,
-                   'ingredients': [ing(x) for x in ings], 'result': res}
-            sub = 'crafting'
-        elif st == 'cut':
-            obj = {'type': 'farmersdelight:cutting', 'ingredients': [ing(x) for x in ings],
-                   'tool': [{'type': 'farmersdelight:tool_action', 'action': 'knife_dig'}, {'tag': 'forge:tools/knives'}],
-                   'result': [res]}
-            sub = 'cutting'
-        wjson(os.path.join(rdir, sub, name + '.json'), obj)
-        rec_id = f'{MOD}:{sub}/{name}'
-        crit = {'has_the_recipe': {'trigger': 'minecraft:recipe_unlocked', 'conditions': {'recipe': rec_id}}}
-        uniq = []
-        for x in ings:
-            if x not in uniq and x != 'minecraft:bowl': uniq.append(x)
-        for n, x in enumerate(uniq):
-            i = ing(x)
-            pred = {'tag': i['tag']} if 'tag' in i else {'items': [i['item']]}
-            crit[f'has_ingredient_{n}'] = {'trigger': 'minecraft:inventory_changed', 'conditions': {'items': [pred]}}
-        wjson(os.path.join(adir, sub, name + '.json'), {
-            'parent': 'minecraft:recipes/root', 'criteria': crit, 'requirements': [list(crit.keys())],
-            'rewards': {'recipes': [rec_id]}, 'sends_telemetry_event': False})
-
-    # ---------- модели ----------
-    mdir = os.path.join(RES, 'assets', MOD, 'models', 'item'); shutil.rmtree(mdir, ignore_errors=True)
-    for it in items:
-        wjson(os.path.join(mdir, it['id'] + '.json'), {'parent': 'minecraft:item/generated', 'textures': {'layer0': f'{MOD}:item/{it["id"]}'}})
-
-    # ---------- теги (категории Farmer's Delight) ----------
-    tags = {'drinks': [], 'meals': [], 'sweets': [], 'snacks': []}
-    for it in items:
-        tags[category(it)].append(f'{MOD}:{it["id"]}')
-    for k, v in tags.items():
-        wjson(os.path.join(RES, 'data', 'farmersdelight', 'tags', 'items', k + '.json'), {'replace': False, 'values': v})
-
-    # ---------- языки ----------
-    for lang in ('en_us', 'ru_ru'):
-        src = json.load(open(os.path.join(ROOT, 'tools', 'lang', lang + '.json'), encoding='utf-8'))
-        out = {}
-        for k, v in src.items():
-            if k in DROP_LANG: continue
-            k = k.replace('stardewkitchen', MOD)
-            if k.startswith('item.') and k.split('.')[-1] in SKIP: continue
-            out[k] = v
-        out['itemGroup.' + MOD] = 'Stardew Delight'
-        wjson(os.path.join(RES, 'assets', MOD, 'lang', lang + '.json'), out)
-    print(f'OK: {len(items)} блюд, {len(R)} рецептов')
 
 if __name__ == '__main__':
     main()

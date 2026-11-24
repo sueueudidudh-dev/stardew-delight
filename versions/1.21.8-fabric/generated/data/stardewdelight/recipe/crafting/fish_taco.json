@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/cooked_fish",
+    "stardewdelight:tortilla",
+    "#c:crops/cabbage",
+    "#c:crops/tomato"
+  ],
+  "result": {
+    "id": "stardewdelight:fish_taco"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:fried_mushroom"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

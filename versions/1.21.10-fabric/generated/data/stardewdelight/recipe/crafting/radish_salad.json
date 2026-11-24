@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:crops/beetroot",
+    "#c:crops/beetroot",
+    "#c:foods/leafy_green",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:radish_salad"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/cabbage",
+    "#c:drinks/milk",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:cheese_cauliflower"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

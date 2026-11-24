@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar",
+    "#c:eggs",
+    "#c:foods/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:chocolate_cake"
+  }
+}

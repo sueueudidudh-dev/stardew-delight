@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "minecraft:cod",
+    "#c:crops/potato",
+    "#c:foods/milk",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:chowder"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

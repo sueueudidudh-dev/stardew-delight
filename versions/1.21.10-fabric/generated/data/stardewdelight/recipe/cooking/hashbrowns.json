@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/potato",
+    "#c:crops/potato",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:hashbrowns"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

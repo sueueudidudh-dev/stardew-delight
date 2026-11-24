@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "farmersdelight:pumpkin_slice",
+    "#c:crops/potato",
+    "#c:crops/carrot",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:autumns_bounty"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

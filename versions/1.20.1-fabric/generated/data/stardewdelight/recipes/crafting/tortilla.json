@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    {
+      "tag": "c:foods/doughs"
+    },
+    {
+      "tag": "c:foods/doughs"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:tortilla",
+    "count": 3
+  }
+}

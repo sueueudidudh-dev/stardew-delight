@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    },
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    },
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    },
+    {
+      "tag": "c:foods/raw_fishes/cod"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:carp_surprise"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

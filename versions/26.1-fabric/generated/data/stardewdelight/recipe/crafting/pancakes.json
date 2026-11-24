@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "#c:eggs",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:pancakes"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/rice",
+    "#c:foods/milk",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:rice_pudding"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

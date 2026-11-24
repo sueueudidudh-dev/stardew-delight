@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "minecraft:sea_pickle",
+    "stardewdelight:tortilla",
+    "minecraft:cornflower"
+  ],
+  "result": {
+    "id": "stardewdelight:lucky_lunch"
+  }
+}

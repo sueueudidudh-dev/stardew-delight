@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/carrot",
+    "minecraft:brown_mushroom",
+    "#c:crops/cabbage",
+    "minecraft:glow_berries"
+  ],
+  "result": {
+    "id": "stardewdelight:stir_fry"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

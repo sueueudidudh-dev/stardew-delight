@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:foods/safe_raw_fish",
+    "#c:foods/safe_raw_fish",
+    "#c:foods/safe_raw_fish",
+    "#c:crops/tomato",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:fish_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

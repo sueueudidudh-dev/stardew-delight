@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/carrot",
+    "#c:crops/carrot",
+    "#c:foods/milk",
+    "#c:crops/onion"
+  ],
+  "result": {
+    "id": "stardewdelight:parsnip_soup"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "drinks",
+  "ingredients": [
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans",
+    "minecraft:cocoa_beans"
+  ],
+  "result": {
+    "id": "stardewdelight:triple_shot_espresso"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

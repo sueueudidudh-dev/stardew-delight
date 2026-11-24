@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes/tropical_fish"
+    },
+    {
+      "tag": "c:foods/raw_fishes/tropical_fish"
+    },
+    {
+      "tag": "c:milks"
+    },
+    {
+      "tag": "c:crops/tomato"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:lobster_bisque"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

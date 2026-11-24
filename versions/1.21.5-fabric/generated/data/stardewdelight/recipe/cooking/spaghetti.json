@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:foods/pasta",
+    "#c:crops/tomato",
+    "#c:crops/tomato"
+  ],
+  "result": {
+    "id": "stardewdelight:spaghetti"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

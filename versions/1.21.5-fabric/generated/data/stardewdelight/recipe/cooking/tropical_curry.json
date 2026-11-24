@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/rice",
+    "minecraft:melon_slice",
+    "minecraft:cocoa_beans",
+    "minecraft:blaze_powder"
+  ],
+  "result": {
+    "id": "stardewdelight:tropical_curry"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "minecraft:tropical_fish",
+    "#c:crops/tomato",
+    "#c:crops/carrot",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:shrimp_cocktail"
+  }
+}

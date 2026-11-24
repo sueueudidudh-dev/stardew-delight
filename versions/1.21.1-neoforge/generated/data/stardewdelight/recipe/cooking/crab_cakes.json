@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "minecraft:tropical_fish"
+    },
+    {
+      "tag": "c:foods/dough"
+    },
+    {
+      "tag": "c:eggs"
+    },
+    {
+      "item": "minecraft:sunflower"
+    }
+  ],
+  "result": {
+    "id": "stardewdelight:crab_cakes"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

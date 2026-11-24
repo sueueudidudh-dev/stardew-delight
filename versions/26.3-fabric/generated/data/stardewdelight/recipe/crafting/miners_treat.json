@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "minecraft:glow_berries",
+    "minecraft:glow_berries",
+    "minecraft:sugar",
+    "#c:drinks/milk"
+  ],
+  "result": {
+    "id": "stardewdelight:miners_treat"
+  }
+}

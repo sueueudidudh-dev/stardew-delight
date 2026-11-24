@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/dough",
+    "minecraft:melon_slice",
+    "minecraft:melon_slice",
+    "minecraft:sugar",
+    "#c:eggs"
+  ],
+  "result": {
+    "id": "stardewdelight:pink_cake"
+  }
+}

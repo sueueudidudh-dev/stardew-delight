@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cooking",
+  "category": "meals",
+  "ingredients": [
+    "#c:crops/beetroot",
+    "#c:crops/beetroot",
+    "#c:crops/cabbage",
+    "minecraft:apple"
+  ],
+  "result": {
+    "id": "stardewdelight:red_plate"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

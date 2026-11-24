@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/leafy_green",
+    "minecraft:dandelion",
+    "minecraft:apple",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "id": "stardewdelight:salad"
+  }
+}

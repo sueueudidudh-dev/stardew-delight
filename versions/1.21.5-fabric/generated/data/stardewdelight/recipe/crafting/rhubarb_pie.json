@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "stardewdelight",
+  "ingredients": [
+    "farmersdelight:pie_crust",
+    "minecraft:sugar_cane",
+    "minecraft:sugar_cane",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "stardewdelight:rhubarb_pie"
+  }
+}

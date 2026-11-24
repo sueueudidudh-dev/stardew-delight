@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "stardewdelight",
+  "ingredients": [
+    "#c:foods/bread",
+    "#c:crops/tomato",
+    "minecraft:sunflower"
+  ],
+  "result": {
+    "id": "stardewdelight:bruschetta"
+  }
+}

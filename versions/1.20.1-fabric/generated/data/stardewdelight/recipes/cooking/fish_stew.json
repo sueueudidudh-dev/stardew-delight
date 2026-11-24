@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "c:foods/raw_fishes"
+    },
+    {
+      "tag": "c:foods/raw_fishes"
+    },
+    {
+      "tag": "c:foods/raw_fishes"
+    },
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "tag": "c:crops/onion"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:fish_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

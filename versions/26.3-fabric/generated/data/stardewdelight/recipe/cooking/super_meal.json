@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:crops/cabbage",
+    "minecraft:sweet_berries",
+    "minecraft:fern"
+  ],
+  "result": {
+    "id": "stardewdelight:super_meal"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}
