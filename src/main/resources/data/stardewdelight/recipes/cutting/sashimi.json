@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:tropical_fish"
+    }
+  ],
+  "tool": [
+    {
+      "type": "farmersdelight:tool_action",
+      "action": "knife_dig"
+    },
+    {
+      "tag": "forge:tools/knives"
+    }
+  ],
+  "result": [
+    {
+      "item": "stardewdelight:sashimi",
+      "count": 2
+    }
+  ]
+}

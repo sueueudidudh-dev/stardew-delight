@@ -1,0 +1,8 @@
+build/
+run/
+.gradle/
+*.iml
+.idea/
+out/
+__pycache__/
+*.pyc

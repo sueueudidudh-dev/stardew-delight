@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "forge:dough"
+    },
+    {
+      "tag": "forge:raw_fishes"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:strange_bun"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

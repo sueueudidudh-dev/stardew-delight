@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "forge:crops/beetroot"
+    },
+    {
+      "tag": "forge:crops/beetroot"
+    },
+    {
+      "tag": "forge:crops/cabbage"
+    },
+    {
+      "item": "minecraft:apple"
+    }
+  ],
+  "result": {
+    "item": "stardewdelight:red_plate"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}
