@@ -1,3 +1,18 @@
+<p align="center"><img src="docs/banner.gif" alt="Stardew Delight" width="100%"></p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Minecraft-1.20.1-62B47A" alt="Minecraft 1.20.1">
+  <img src="https://img.shields.io/badge/Forge-47%2B-E04E14" alt="Forge 47+">
+  <img src="https://img.shields.io/badge/requires-Farmer's%20Delight-C8853B" alt="Requires Farmer's Delight">
+  <img src="https://img.shields.io/badge/dishes-78-F5A623" alt="78 dishes">
+</p>
+
+**Every dish from Stardew Valley, cooked the Farmer's Delight way.** 78 new dishes with their Stardew buffs, cooked in
+the cooking pot, at the crafting table and on the cutting board. The mod page text is in
+[`docs/description.md`](docs/description.md).
+
+<p align="center"><img src="docs/clips/cookbook.gif" alt="The whole cookbook" width="70%"></p>
+
 # Stardew Delight — аддон для Farmer's Delight
 
 Вся еда из Stardew Valley, переделанная из мода **Stardew Kitchen** в аддон для **Farmer's Delight**.
