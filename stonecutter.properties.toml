@@ -9,7 +9,7 @@ mod.id = "stardewdelight"
 mod.name = "Stardew Delight"
 mod.group = "com.stardewdelight"
 mod.version = "1.0.0"
-mod.author = "Karasik"
+mod.author = "Karasik_1664"
 
 deps.fabric_loader = "0.20.1"
 deps.mixin = "0.8.5"

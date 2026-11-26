@@ -3,7 +3,7 @@
   "id": "${id}",
   "version": "${version}",
   "name": "${name}",
-  "description": "Every dish from Stardew Valley for Farmer's Delight: 78 dishes cooked in the cooking pot, on the cutting board and at the crafting table, with their Stardew buffs, Comfort and Nourishment, Magnetism and Debuff Immunity.",
+  "description": "78 dishes from Stardew Valley for Farmer's Delight, cooked in the cooking pot, on the cutting board and at the crafting table, with buffs based on Stardew, Comfort and Nourishment, Magnetism and Debuff Immunity.",
   "authors": [
     "${author}"
   ],
@@ -12,7 +12,7 @@
     "sources": "https://github.com/sueueudidudh-dev/stardew-delight",
     "issues": "https://github.com/sueueudidudh-dev/stardew-delight/issues"
   },
-  "license": "All Rights Reserved",
+  "license": "MIT",
   "icon": "stardewdelight_logo.png",
   "environment": "*",
   "entrypoints": {

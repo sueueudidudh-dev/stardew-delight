@@ -1,6 +1,6 @@
 modLoader="javafml"
 loaderVersion="${loader_range}"
-license="All Rights Reserved"
+license="MIT"
 issueTrackerURL="https://github.com/sueueudidudh-dev/stardew-delight/issues"
 
 [[mods]]
@@ -10,9 +10,9 @@ displayName="${name}"
 authors="${author}"
 displayURL="https://modrinth.com/mod/stardew-delight"
 logoFile="stardewdelight_logo.png"
-credits="Блюда и идея — Stardew Valley (ConcernedApe). Farmer's Delight — vectorwing. Аддон — Karasik."
+credits="Блюда и идея — Stardew Valley (ConcernedApe). Farmer's Delight — vectorwing."
 description='''
-Аддон для Farmer's Delight: вся еда из Stardew Valley (78 блюд + яичница и хлеб из FD/ванили).
+Аддон для Farmer's Delight: 78 блюд из Stardew Valley (яичница и хлеб — из FD и ванили).
 Блюда готовятся в кастрюле, на разделочной доске и на верстаке из ингредиентов Farmer's Delight.
 Баффы Stardew + эффекты «Сытость» и «Уют» из Farmer's Delight, а также Магнетизм и Иммунитет к дебаффам.
 '''

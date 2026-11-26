@@ -1,21 +1,22 @@
 ![Stardew Delight](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/banner.webp)
 
-**Every dish from Stardew Valley, cooked the Farmer's Delight way: in the cooking pot, on the cutting board and at the crafting table.**
+**Dishes from the Stardew Valley cookbook, cooked the Farmer's Delight way: in the cooking pot, on the cutting board and at the crafting table.**
 
-Stardew Delight is an add-on for **Farmer's Delight** on **Minecraft Java 1.18.2 – 26.3** for **Forge, NeoForge and Fabric**. It brings the whole Stardew Valley cookbook into your kitchen: 78 new dishes, plus Farmer's Delight's Fried Egg and vanilla Bread for the full 80. Every dish fills you up differently and gives the buff it gives in the valley.
+Stardew Delight is an add-on for **Farmer's Delight** that adds **78 dishes from Stardew Valley**. Fried Egg and Bread are not duplicated: recipes use Farmer's Delight's Fried Egg and vanilla Bread instead. Available for **Forge** 1.18.2, 1.19.2 and 1.20.1, **NeoForge** 1.21.1 and **Fabric** 1.20.1, 1.21.1, 1.21.5 – 1.21.11 and 26.1 – 26.3. Requires Farmer's Delight on Forge and NeoForge, Farmer's Delight Refabricated and Fabric API on Fabric.
 
-![The whole cookbook](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/clips/cookbook.webp)
+![The cookbook](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/clips/cookbook.webp)
 
 ![Features](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-features.webp)
 
-- **The whole cookbook.** From a humble Hashbrowns to Lobster Bisque, Pink Cake and the Complete Breakfast. Every dish has its own texture drawn in Farmer's Delight's style: the same wooden bowls, glass mugs, outlines and palette.
-- **Cooked like Farmer's Delight food.** Soups, stews, curries and puddings simmer in the cooking pot, salads and baking come together at the crafting table, and sashimi is sliced on the cutting board.
-- **Farmer's Delight ingredients.** Onions, tomatoes, cabbage, rice, wheat dough, raw pasta, tomato sauce, pie crust and pumpkin slices all have a use, so your crop fields feed the valley's menu.
-- **Served like Farmer's Delight food.** Soups, stews, salads and main courses come in a bowl, stack to 16 and hand the bowl back; drinks come in a bottle; sandwiches, tacos, pizza, rolls and baking are eaten by hand. The cooking pot asks for the right container.
-- **Stardew buffs.** Haste, Speed, Luck, Resistance, Water Breathing, Night Vision, Hero of the Village and more, with the valley's durations.
-- **Comfort and Nourishment.** Hot soups also give Farmer's Delight's **Comfort**, hearty main courses in a bowl give **Nourishment**.
-- **Two new effects.** **Magnetism** pulls nearby items and XP orbs to you. **Debuff Immunity** clears poison, weakness, nausea and other harmful effects and keeps them away.
-- **Clear tooltips.** Every dish shows its hunger, saturation and every effect with its duration.
+- **78 dishes.** From Hashbrowns and Pancakes to Lobster Bisque, Pink Cake and the Complete Breakfast. Every dish has its own texture drawn in Farmer's Delight's style.
+- **Three ways to cook.** 48 dishes simmer in the cooking pot, 29 are made at the crafting table, and Sashimi is sliced on the cutting board.
+- **Farmer's Delight ingredients.** Recipes use onions, tomatoes, cabbage, rice, cooked rice, wheat dough, raw pasta, tomato sauce, pie crust, pumpkin slices and Fried Egg.
+- **Served like Farmer's Delight food.** Bowl dishes stack to 16 and give the bowl back, the cooking pot asks for a bowl to serve them. Triple Shot Espresso and Ginger Ale come in a glass bottle. Sandwiches, tacos, pizza, rolls and baked goods are eaten by hand.
+- **Buffs based on Stardew.** Stardew stat buffs become Minecraft effects: Farming and Mining → Haste, Fishing → Luck, Luck → Hero of the Village, Foraging → Jump Boost, Defense → Resistance, Attack → Strength, Speed → Speed, Max Energy → Absorption. Some dishes get an extra effect that suits them, such as Water Breathing on seafood, Fire Resistance on spicy food and Regeneration on cakes and pies.
+- **Comfort and Nourishment.** Soups and other warm bowl dishes give Farmer's Delight's **Comfort**, hearty main courses give **Nourishment**.
+- **Two new effects.** **Magnetism** pulls dropped items and XP orbs to you (5 blocks, +3 per level). **Debuff Immunity** removes harmful effects and blocks new ones while it lasts.
+- **Strange Bun** teleports you to a random spot nearby, like a chorus fruit.
+- **Tooltips.** Every dish shows its hunger, saturation and effects with their durations.
 
 ![Buffs](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-buffs.webp)
 
@@ -24,58 +25,27 @@ Stardew Delight is an add-on for **Farmer's Delight** on **Minecraft Java 1.18.2
 | **Miner's Treat** | Haste III, Night Vision, Magnetism |
 | **Seafoam Pudding** | Luck IV, Water Breathing, Dolphin's Grace |
 | **Complete Breakfast** | Haste II, Absorption II, Nourishment |
-| **Spicy Eel** | Speed, Fire Resistance, Hero of the Village |
+| **Spicy Eel** | Speed, Fire Resistance, Hero of the Village, Nourishment |
 | **Lobster Bisque** | Luck III, Water Breathing, Absorption II, Comfort |
 | **Triple Shot Espresso** | Speed II, Haste |
-| **Squid Ink Ravioli** | Haste, Debuff Immunity |
+| **Squid Ink Ravioli** | Haste, Debuff Immunity, Nourishment |
 | **Strange Bun** | Night Vision and a random teleport |
 
 ![Recipes](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-recipes.webp)
 
 - **Cooking pot:** Parsnip Soup (carrot ×2, milk, onion), Tom Kha Soup (tropical fish, brown mushroom, milk, onion), Tropical Curry (rice, melon slice, cocoa beans, blaze powder), Fiddlehead Risotto (rice, fern, onion, milk) and 44 more.
-- **Crafting table:** Pizza (wheat dough, tomato sauce, milk), Complete Breakfast (fried egg, milk, Hashbrowns, Pancakes, bowl), Fish Taco (cooked fish, Tortilla, cabbage, tomato), Rhubarb Pie (pie crust, sugar cane ×2, sugar) and more.
-- **Cutting board:** Sashimi, two from a tropical fish with any knife.
+- **Crafting table:** Pizza (wheat dough, tomato sauce, milk), Complete Breakfast (fried egg, milk, Hashbrowns, Pancakes, bowl), Fish Taco (cooked fish, Tortilla, cabbage, tomato), Rhubarb Pie (pie crust, sugar cane ×2, sugar) and 25 more.
+- **Cutting board:** Sashimi, two from a tropical fish with a knife.
 
-Every recipe shows up in the recipe book as soon as you pick up one of its ingredients, and in recipe viewers such as JEI.
-
-![How to use](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-how-to-use.webp)
-
-1. Grow Farmer's Delight crops and set up a cooking pot over a heat source.
-2. Pick up an ingredient: its Stardew recipes unlock in the recipe book.
-3. Cook, eat, enjoy the buff. All dishes are in the **Stardew Delight** creative tab.
-
-![Compatibility](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-compatibility.webp)
-
-- Recipes use the loader's common tags the way Farmer's Delight does (`#forge:crops/onion`, `#forge:milk`, `#forge:raw_fishes/cod`, … on Forge; `#c:crops/onion`, `#c:drinks/milk`, `#c:foods/dough`, … on NeoForge and Fabric), so crops and fish from other mods work as ingredients.
-- Dishes are tagged `farmersdelight:meals`, `sweets`, `snacks` and `drinks`.
-- The same 78 dishes, recipes, effects and textures on every version. Every build is tested on a dedicated server: all recipes load, every dish is eaten and gives its effects and container back.
-
-![Installation](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-installation.webp)
-
-Put the jar for your Minecraft version and loader in the `mods` folder together with **Farmer's Delight** (Forge / NeoForge) or **Farmer's Delight Refabricated** and **Fabric API** (Fabric). Needed on both the client and the server.
-
-| Minecraft | Loader | Tested with |
-| --- | --- | --- |
-| 26.3 | Fabric | Farmer's Delight Refabricated 26.3-3.6.30 |
-| 26.2 | Fabric | Farmer's Delight Refabricated 26.2-3.6.30 |
-| 26.1 – 26.1.2 | Fabric | Farmer's Delight Refabricated 26.1-3.6.30 |
-| 1.21.11 | Fabric | Farmer's Delight Refabricated 1.21.11-3.6.16 |
-| 1.21.9 – 1.21.10 | Fabric | Farmer's Delight Refabricated 1.21.10-3.4.2 |
-| 1.21.6 – 1.21.8 | Fabric | Farmer's Delight Refabricated 1.21.8-3.3.3 |
-| 1.21.5 | Fabric | Farmer's Delight Refabricated 1.21.5-3.2.5 |
-| 1.21.1 | NeoForge / Fabric | Farmer's Delight 1.21.1-1.3.4 / Refabricated 1.21.1-3.3.6 |
-| 1.20.1 | Forge, NeoForge / Fabric | Farmer's Delight 1.20.1-1.3.4 / Refabricated 1.20.1-2.5.7 |
-| 1.19.2 | Forge | Farmer's Delight 1.19.2-1.2.4 |
-| 1.18.2 | Forge | Farmer's Delight 1.18.2-1.2.3 |
+A recipe appears in the recipe book as soon as you pick up one of its ingredients. All dishes are in the **Stardew Delight** creative tab.
 
 ![Credits](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-credits.webp)
 
 - Dishes and the original idea: **Stardew Valley** by ConcernedApe. This is an unofficial fan-made mod and is not affiliated with ConcernedApe.
 - **Farmer's Delight** by vectorwing.
-- Add-on and textures: Karasik.
 
 ![License](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/title-license.webp)
 
-© 2026 Karasik. All rights reserved. You can use Stardew Delight in modpacks and videos; please don't re-upload it or present it as your own.
+Stardew Delight is released under the **MIT License**.
 
 ![](https://raw.githubusercontent.com/sueueudidudh-dev/stardew-delight/main/docs/desc/divider.webp)

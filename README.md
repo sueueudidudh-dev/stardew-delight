@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/dishes-78-F5A623" alt="78 dishes">
 </p>
 
-**Every dish from Stardew Valley, cooked the Farmer's Delight way.** 78 new dishes with their Stardew buffs, cooked in
+**Dishes from the Stardew Valley cookbook, cooked the Farmer's Delight way.** 78 new dishes with buffs based on Stardew, cooked in
 the cooking pot, at the crafting table and on the cutting board. The mod page text is in
 [`docs/description.md`](docs/description.md).
 
